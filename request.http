@@ -1,0 +1,58 @@
+### |-----------------| REGISTRO |-----------------|
+POST http://127.0.0.1:5000/register
+Content-Type:  application/json
+
+{
+    "username": "user1",
+    "password": "oasuet10"
+}
+### |-----------------| AUTORIZAÇÂO |-----------------|
+POST http://127.0.0.1:5000/login
+Content-Type:  application/json
+
+{
+    "username": "user1",
+    "password": "oasuet10"
+}
+
+### |-----------------| CRIAR UM ITEM |-----------------|
+POST http://127.0.0.1:5000/item/abacaxi
+Content-Type:  application/json
+
+{
+    "price": 420.69
+}
+
+### |-----------------| DELETAR UM ITEM |-----------------|
+DELETE   http://127.0.0.1:5000/item/abacaxi  
+
+### |-----------------| CRIAR/MODIFICAR UM ITEM |-----------------|
+PUT  http://127.0.0.1:5000/item/abacaxi
+Content-Type:  application/json
+
+{
+    "price": 420.69,
+    "store_id": 1,
+    "nada": "Isso vai ser ignorado pelo parser"
+}
+
+###  |-----------------| PEGAR UM ITEM |-----------------|
+GET  http://127.0.0.1:5000/item/test
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA3Mzc0OTIsImlhdCI6MTYwMDczNzE5MiwibmJmIjoxNjAwNzM3MTkyLCJpZGVudGl0eSI6MX0.m155b0QWYKfZMwpx8VzMA7zF3Y2AS17yLY9mJwD8OlY
+
+### |-----------------| LISTA DE ITEMS |-----------------|
+GET  http://127.0.0.1:5000/items
+
+###  |-----------------| CRIAR UMA STORE |-----------------|
+POST  http://127.0.0.1:5000/store/test
+Content-Type:  application/json
+
+{
+    "name": "test"
+}
+
+###  |-----------------| PEGAR UMA STORE |-----------------|
+GET  http://127.0.0.1:5000/store/test
+
+### |-----------------| LISTA DE STORES |-----------------|
+GET  http://127.0.0.1:5000/stores
