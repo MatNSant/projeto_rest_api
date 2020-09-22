@@ -16,11 +16,12 @@ Content-Type:  application/json
 }
 
 ### |-----------------| CRIAR UM ITEM |-----------------|
-POST http://127.0.0.1:5000/item/abacaxi
+POST http://127.0.0.1:5000/item/pao
 Content-Type:  application/json
 
 {
-    "price": 420.69
+    "price": 2.9,
+    "store_id": 1
 }
 
 ### |-----------------| DELETAR UM ITEM |-----------------|
