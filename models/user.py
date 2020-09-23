@@ -17,9 +17,9 @@ class UserModel(db.Model):
         db.session.commit()
 
     @classmethod
-    def search_by_username(cls, username):
-        cls.query.filter_by(username=username).first()
+    def find_bt_username(cls, username):
+        return cls.query.filter_by(username=username).first()
 
     @classmethod
-    def search_by_id(cls, _id):
+    def find_by_id(cls, _id):
         return cls.query.filter_by(id = _id).first()

@@ -3,8 +3,8 @@ POST https://ll--2--ll.herokuapp.com/register
 Content-Type:  application/json
 
 {
-    "username": "user1",
-    "password": "oasuet10"
+    "username": "1",
+    "password": "1"
 }
 ### |-----------------| AUTORIZAÇÂO |-----------------|
 # POST https://ll--2--ll.herokuapp.com/login
@@ -12,8 +12,8 @@ POST https://ll--2--ll.herokuapp.com/auth
 Content-Type:  application/json
 
 {
-    "username": "user1",
-    "password": "oasuet10"
+    "username": "1",
+    "password": "1"
 }
 
 ### |-----------------| CRIAR UM ITEM |-----------------|

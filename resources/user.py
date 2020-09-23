@@ -8,7 +8,7 @@ class UserRegister(Resource):
     def post(self):
         request_data = parse_request(["username", str, True], ["password", str, True])
 
-        if UserModel.search_by_username(request_data["username"]):
+        if UserModel.find_bt_username(request_data["username"]):
             return {"message": "username already exists"}, 400
 
         user = UserModel(**request_data)
