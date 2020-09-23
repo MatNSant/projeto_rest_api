@@ -10,6 +10,9 @@ from resources.item import Item, ItemList
 from resources.store import Store, StoreList
 
 app = Flask(__name__)
+
+app.config['DEBUG'] = True
+
 app.secret_key = "chave de desencriptar"
 app.config['JWT_AUTH_URL_RULE'] = '/login'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -31,7 +34,13 @@ api.add_resource(StoreList, "/stores")
 if __name__ == "__main__":
     from db import db
     db.init_app(app)
-    app.run(debug=True)
+
+    if app.config["DEBUG"]:
+        @app.before_first_request
+        def create_tables():
+            db.create_all()
+
+    app.run(port=5000)
     #! Toda vez que escrevemos [from app import *] o python roda [app.py]
     #! Isso faz com que só o arquivo que contém o código [__main__] consiga rodar ele
     #! Se n tivesse isso toda vez que importarmos algo daqui o [app.run()] rodaria - bugando tudo e criando circular import error

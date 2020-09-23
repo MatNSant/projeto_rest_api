@@ -1,5 +1,5 @@
 ### |-----------------| REGISTRO |-----------------|
-POST http://127.0.0.1:5000/register
+POST https://ll--2--ll.herokuapp.com/register
 Content-Type:  application/json
 
 {
@@ -7,7 +7,8 @@ Content-Type:  application/json
     "password": "oasuet10"
 }
 ### |-----------------| AUTORIZAÇÂO |-----------------|
-POST http://127.0.0.1:5000/login
+# POST https://ll--2--ll.herokuapp.com/login
+POST https://ll--2--ll.herokuapp.com/auth
 Content-Type:  application/json
 
 {
@@ -16,7 +17,7 @@ Content-Type:  application/json
 }
 
 ### |-----------------| CRIAR UM ITEM |-----------------|
-POST http://127.0.0.1:5000/item/pao
+POST https://ll--2--ll.herokuapp.com/item/pao
 Content-Type:  application/json
 
 {
@@ -25,10 +26,10 @@ Content-Type:  application/json
 }
 
 ### |-----------------| DELETAR UM ITEM |-----------------|
-DELETE   http://127.0.0.1:5000/item/abacaxi  
+DELETE   https://ll--2--ll.herokuapp.com/item/abacaxi  
 
 ### |-----------------| CRIAR/MODIFICAR UM ITEM |-----------------|
-PUT  http://127.0.0.1:5000/item/abacaxi
+PUT  https://ll--2--ll.herokuapp.com/item/abacaxi
 Content-Type:  application/json
 
 {
@@ -38,14 +39,14 @@ Content-Type:  application/json
 }
 
 ###  |-----------------| PEGAR UM ITEM |-----------------|
-GET  http://127.0.0.1:5000/item/test
+GET  https://ll--2--ll.herokuapp.com/item/test
 Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA3Mzc0OTIsImlhdCI6MTYwMDczNzE5MiwibmJmIjoxNjAwNzM3MTkyLCJpZGVudGl0eSI6MX0.m155b0QWYKfZMwpx8VzMA7zF3Y2AS17yLY9mJwD8OlY
 
 ### |-----------------| LISTA DE ITEMS |-----------------|
-GET  http://127.0.0.1:5000/items
+GET  https://ll--2--ll.herokuapp.com/items
 
 ###  |-----------------| CRIAR UMA STORE |-----------------|
-POST  http://127.0.0.1:5000/store/test
+POST  https://ll--2--ll.herokuapp.com/store/test
 Content-Type:  application/json
 
 {
@@ -53,7 +54,7 @@ Content-Type:  application/json
 }
 
 ###  |-----------------| PEGAR UMA STORE |-----------------|
-GET  http://127.0.0.1:5000/store/test
+GET  https://ll--2--ll.herokuapp.com/store/test
 
 ### |-----------------| LISTA DE STORES |-----------------|
-GET  http://127.0.0.1:5000/stores
+GET  https://ll--2--ll.herokuapp.com/stores
