@@ -30,7 +30,9 @@ class Item(Resource):
         item = ItemModel.find_by_name(name)
         if item:
             item.delete_from_db()
-        return {"message": "Item deleted"}
+            return {"message": "Item deleted"}
+        else:
+            return {"message": "This item doesn't exist"}
             
 
     def put(self, name):
