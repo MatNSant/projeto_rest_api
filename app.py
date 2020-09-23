@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask
 from flask_restful import Api
 from flask_jwt import JWT
@@ -11,7 +13,9 @@ app = Flask(__name__)
 app.secret_key = "chave de desencriptar"
 app.config['JWT_AUTH_URL_RULE'] = '/login'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", 'sqlite:///database.db')
+# [os.environ.get] vai pegar uma variável do sistema (no caso do heroku, é a localização do postgress sql), e n conseguir
+# (talvez estajamos rodando localmente nesse pc), vai rodar o [sqlite] localmente
 
 api = Api(app)
 
